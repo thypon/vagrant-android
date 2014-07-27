@@ -42,6 +42,7 @@ Real World Android Build
     vagrant@guest:aosp> repo init -u https://android.googlesource.com/platform/manifest -b android-4.4.4_r2
     vagrant@guest:aosp> repo sync \
       # It can takes several hours depending on your internet connection
+    vagrant@guest:aosp> source build/envsetup.sh # Set-up compilation environment
     vagrant@guest:aosp> lunch 1 # Selects the generic arm build
     vagrant@guest:aosp> make -j4 \
       # It can takes several hours depending on your horsepowers
