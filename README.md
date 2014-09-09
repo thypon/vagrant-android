@@ -38,13 +38,13 @@ Real World Android Build
 
     user@host> vagrant up # Creates and Configure the VM
     user@host> vagrant ssh # Connects to the VM
-    vagrant@guest> mkdir aosp && cd aosp # Make and Move to aosp directory 
-    vagrant@guest:aosp> repo init -u https://android.googlesource.com/platform/manifest -b android-4.4.4_r2
-    vagrant@guest:aosp> repo sync \
+    vagrant@guest> cd android # Move to android directory 
+    vagrant@guest:android> repo init -u https://android.googlesource.com/platform/manifest -b android-4.4.4_r2
+    vagrant@guest:android> repo sync \
       # It can takes several hours depending on your internet connection
-    vagrant@guest:aosp> source build/envsetup.sh # Set-up compilation environment
-    vagrant@guest:aosp> lunch 1 # Selects the generic arm build
-    vagrant@guest:aosp> make -j4 \
+    vagrant@guest:android> source build/envsetup.sh # Set-up compilation environment
+    vagrant@guest:android> lunch 1 # Selects the generic arm build
+    vagrant@guest:android> make -j4 \
       # It can takes several hours depending on your horsepowers
 
 Usefull Links
