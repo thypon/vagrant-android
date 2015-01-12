@@ -19,7 +19,6 @@ w
 EOF
 
 sudo mkfs.ext4 /dev/sdb1
-sudo e2label /dev/sdb1 source
-sudo mkdir /home/vagrant/android
+sudo e2label /dev/sdb1 mnt
 
 date > /etc/disk_added_date

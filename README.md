@@ -38,7 +38,8 @@ Real World Android Build
 
     user@host> vagrant up # Creates and Configure the VM
     user@host> vagrant ssh # Connects to the VM
-    vagrant@guest> cd android # Move to android directory 
+    vagrant@guest> mkdir /mnt/android
+    vagrant@guest> cd /mnt/android # Move to android directory 
     vagrant@guest:android> repo init -u https://android.googlesource.com/platform/manifest -b android-4.4.4_r2
     vagrant@guest:android> repo sync \
       # It can takes several hours depending on your internet connection
