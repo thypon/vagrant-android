@@ -24,6 +24,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   config.vm.provision "shell", path: "provisions/mount_disk.sh"
+  config.ssh.forward_x11 = true
 
   # Synced folders
   ## Mount sources directory in shared/ home directory
