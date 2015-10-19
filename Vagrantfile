@@ -10,15 +10,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Setup Virtualbox VM Setting
   config.vm.provider "virtualbox" do |v|
-    v.memory = 16 * 1024
+    v.memory = ENV["MEMORY"] || 16 * 1024
     v.cpus = 4
-    
-    if ARGV[0] == "up" && ! File.exist?(file_to_disk) 
+
+    if ARGV[0] == "up" && ! File.exist?(file_to_disk)
       v.customize ['createhd', '--filename', file_to_disk, '--size', DIMENSION * 1024]
     end
     v.customize ['storageattach', :id, '--storagectl', 'SATAController', '--port', 1, '--device', 0, '--type', 'hdd', '--medium', file_to_disk]
   end
-    
+
   unless File.exist?(file_to_disk)
     config.vm.provision "shell", path: "provisions/create_disk.sh"
   end
