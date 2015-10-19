@@ -7,7 +7,7 @@ then
    exit 0
 fi
 
-sudo fdisk -u /dev/sdb <<EOF
+fdisk -u /dev/sdb <<EOF
 n
 p
 1
@@ -18,7 +18,7 @@ t
 w
 EOF
 
-sudo mkfs.ext4 /dev/sdb1
-sudo e2label /dev/sdb1 mnt
+mkfs.ext4 /dev/sdb1
+e2label /dev/sdb1 mnt
 
 date > /etc/disk_added_date

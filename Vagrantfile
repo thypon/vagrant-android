@@ -6,7 +6,7 @@ file_to_disk = File.realpath( "." ).to_s + "/.disk.vdi"
 DIMENSION = 200
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
-  config.vm.box = "ubuntu/precise64"
+  config.vm.box = "ubuntu/trusty64"
 
   # Setup Virtualbox VM Setting
   config.vm.provider "virtualbox" do |v|
